@@ -5,14 +5,14 @@
 ---
 
 ## Initial Configuration
- 1. Visit <u>Main.java</u>
+ 1. Visit <ins>Main.java</ins>
  2. Under the main method, modify the following variables to suit your implementation
     - indexPath: (String) Indicates the path where index files for searching are created and stored **[HIGHLY IMPORTANT]**
     - mongoConnectionUrl: (String) The url for the mongo db host
     - dbName: (String) Name of the database in mongodb from which information is retrieved
     - collectionName: (String) Name of the collection to consider
    
- 3. Visit <u>MongoLuceneIndexer.java</u>
+ 3. Visit <ins>MongoLuceneIndexer.java</ins>
  4. Under the method *indexDocuments()* and *searchIndex()* ensure all fields exist in your collection
     - Here, you can modify the fields that you would like to consider for the search. More on this below
 
@@ -34,7 +34,7 @@
 ## Modifying maximum retrieved queries
  Find the line
      TopDocs results = searcher.search(comboQuery, 100);
- under the *searchIndex()* method of <u>MogoLuceneIndexer.java</u>
+ under the *searchIndex()* method of <ins>MogoLuceneIndexer.java</ins>
  
  Here, the second argument passed indicates the maximum allowed retrievals for a query. This number may be modified if you want more than 100 fields to be retrieved
  With current configuration: minimum fields = 0, maximum fields = 100
