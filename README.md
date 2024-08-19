@@ -7,7 +7,7 @@
 ## Initial Configuration
  1. Visit Main.java
  2. Under the main method, modify the following variables to suit your implementation
-    - indexPath: (String) Indicates the path where index files for searching are created and stored [[HIGHLY IMPORTANT]]
+    - indexPath: (String) Indicates the path where index files for searching are created and stored **[HIGHLY IMPORTANT]**
     - mongoConnectionUrl: (String) The url for the mongo db host
     - dbName: (String) Name of the database in mongodb from which information is retrieved
     - collectionName: (String) Name of the collection to consider
