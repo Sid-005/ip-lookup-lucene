@@ -5,18 +5,18 @@
 ---
 
 ## Initial Configuration
- 1. Visit Main.java
+ 1. Visit <u>Main.java</u>
  2. Under the main method, modify the following variables to suit your implementation
     - indexPath: (String) Indicates the path where index files for searching are created and stored **[HIGHLY IMPORTANT]**
     - mongoConnectionUrl: (String) The url for the mongo db host
     - dbName: (String) Name of the database in mongodb from which information is retrieved
     - collectionName: (String) Name of the collection to consider
    
- 3. Visit MongoLuceneIndexer.java
- 4. Under the method indexDocuments() and searchIndex() ensure all fields exist in your collection
+ 3. Visit <u>MongoLuceneIndexer.java</u>
+ 4. Under the method *indexDocuments()* and *searchIndex()* ensure all fields exist in your collection
     - Here, you can modify the fields that you would like to consider for the search. More on this below
 
- Now, running the Main.java file should automatically configure all the required dependencies. If there is a naming error for repository, use the former name: mongo-lucene-2024
+ Now, running the Main.java file should automatically configure all the required dependencies. If there is a naming error for repository, use the former name: ***mongo-lucene-2024***
 
 
 ## Searching Behaviour
@@ -25,7 +25,7 @@
 
 
 ## Storing results
- All search results that meet the scoring criteria are stored in the hashmap "filterMap". 
+ All search results that meet the scoring criteria are stored in the hashmap "***filterMap***". 
  Key: cidr; Value: List<org.apache.lucene.document.Document> (index file location)
 
  NOTE: the values can be further modified in the for loop of searchIndex. Loop = for (ScoreDoc scoreDoc : results.scoreDocs) {}
@@ -34,7 +34,7 @@
 ## Modifying maximum retrieved queries
  Find the line
      TopDocs results = searcher.search(comboQuery, 100);
- under the searchIndex() method of MogoLuceneIndexer.java
+ under the *searchIndex()* method of <u>MogoLuceneIndexer.java</u>
  
  Here, the second argument passed indicates the maximum allowed retrievals for a query. This number may be modified if you want more than 100 fields to be retrieved
  With current configuration: minimum fields = 0, maximum fields = 100
