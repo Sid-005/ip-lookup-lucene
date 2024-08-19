@@ -83,7 +83,7 @@ public class MongoLuceneIndexer {
                 .add(query5, BooleanClause.Occur.SHOULD)
                 .build();
 
-        TopDocs results = searcher.search(comboQuery, 100); // change this value to scale up/down results
+        TopDocs results = searcher.search(comboQuery, 100); // change the second argument to scale up/down results
         TotalHits count = results.totalHits;
         System.out.println ("Found " + count.toString() + " matching search\n");
         int flag = 0;
